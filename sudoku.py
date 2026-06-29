@@ -1,14 +1,15 @@
-board = [
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
+board = []
+
+print("WELCOME TO SUDOKU SOLVER! ")
+print("Enter the Suduko row by row.")
+print("Use 0 for empty cells.")
+
+for i in range(9):
+    row = list(map(int,input(f"Row{i+1}:").split()))
+    while len(row) != 9:
+        print("Please enter exactly 9 numbers.")
+        row = list(map(int,input(f"Row{i+1}:").split()))
+    board.append(row)
 import copy
 original_board = copy.deepcopy(board)
 
